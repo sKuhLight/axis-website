@@ -2,14 +2,13 @@
 
 Static site for **axisapp.live** — landing page + legal documents (Privacy, Terms, Imprint) for [Axis](https://github.com/sKuhLight/Axis).
 
-Plain static HTML/CSS, **no build step**.
+Plain static HTML/CSS in `public/`, served by a Cloudflare **Worker with Static Assets** (no build step, no server code). Config: `wrangler.jsonc` (`assets.directory: ./public`).
 
-## Deploy (Cloudflare Pages)
-1. Cloudflare dashboard → **Workers & Pages → Create → Pages → Connect to Git** → pick this repo.
-2. Build settings: **Framework preset: None**, **Build command: (empty)**, **Build output directory: `/`** (root).
-3. Deploy. Then **Custom domains → add `axisapp.live`** and follow the DNS step.
+## Deploy (Cloudflare Workers, git-connected)
+The Worker is connected to this repo, so **every push auto-deploys**. `wrangler.jsonc` tells it to serve `./public` as static assets (this replaces the default "Hello world" worker). Clean URLs work automatically — `/imprint` resolves to `public/imprint.html`.
 
-Clean URLs work automatically — Cloudflare serves `imprint.html` at `/imprint`, etc.
+- Custom domain `axisapp.live` is attached to this Worker in the Cloudflare dashboard (Worker → Settings → Domains & Routes).
+- Local preview: `npx wrangler dev`. Manual deploy: `npx wrangler deploy`.
 
 ## Pages
 - `/` — landing (`index.html`)
