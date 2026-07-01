@@ -1,10 +1,13 @@
 {
-  // Cloudflare Worker serving the Axis site as static assets (no server code).
-  // Requests are served from ./public; extensionless paths resolve to .html automatically
-  // (so /imprint → public/imprint.html). This replaces the default "Hello world" worker.
+  // Cloudflare Worker serving the Axis site (static HTML in ./public) via Static Assets.
+  // Extensionless paths resolve to .html automatically (so /imprint → public/imprint.html).
+  //
+  // ⚠ "name" MUST match the Worker's name in the Cloudflare dashboard, or the git build fails.
   "name": "axis-website",
+  "main": "worker.js",
   "compatibility_date": "2026-06-01",
   "assets": {
-    "directory": "./public"
+    "directory": "./public",
+    "binding": "ASSETS"
   }
 }
