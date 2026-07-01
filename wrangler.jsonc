@@ -1,6 +1,10 @@
 {
-  // Cloudflare Worker serving the Axis site (static HTML in ./public) via Static Assets.
-  // Extensionless paths resolve to .html automatically (so /imprint → public/imprint.html).
+  // Cloudflare Worker serving the Axis site (static assets in ./public).
+  //  • Static HTML legal/landing pages: /imprint → public/imprint.html (clean URLs, default html_handling).
+  //  • The Axis remote web app (SPA) is public/index.html + public/_app/** at the root; any unmatched path
+  //    falls back to index.html so client-side routing works (not_found_handling: single-page-application).
+  //    Real files (privacy/terms/imprint/welcome + _app assets) are matched first, so the SPA fallback only
+  //    catches genuine misses.
   //
   // ⚠ "name" MUST match the Worker's name in the Cloudflare dashboard, or the git build fails.
   "name": "axis-website",
@@ -8,6 +12,7 @@
   "compatibility_date": "2026-06-01",
   "assets": {
     "directory": "./public",
-    "binding": "ASSETS"
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application"
   }
 }

@@ -1,20 +1,20 @@
 # axis-website
 
-Static site for **axisapp.live** — landing page + legal documents (Privacy, Terms, Imprint) for [Axis](https://github.com/sKuhLight/Axis).
+Everything served at **axisapp.live** for [Axis](https://github.com/sKuhLight/Axis), via a Cloudflare **Worker with Static Assets** (`wrangler.jsonc`, `assets.directory: ./public`).
 
-Plain static HTML/CSS in `public/`, served by a Cloudflare **Worker with Static Assets** (no build step, no server code). Config: `wrangler.jsonc` (`assets.directory: ./public`).
+## Pages
+- `/` — the Axis **remote web app** (a static SPA: `public/index.html` + `public/_app/**`). **Generated** — built in the Axis repo (`VITE_AXIS_REMOTE=1 npm run build`) and published here by Axis's `deploy-remote` GitHub Action. Do **not** hand-edit `index.html` / `_app/`.
+- `/welcome` — static landing/info page (`welcome.html`).
+- `/privacy` · `/terms` · `/imprint` — legal documents (hand-maintained static HTML).
+
+`not_found_handling: single-page-application` in `wrangler.jsonc` makes any unmatched path fall back to the SPA; real files (legal pages, `_app` assets) are matched first, and clean URLs still work (`/imprint` → `imprint.html`).
 
 ## Deploy (Cloudflare Workers, git-connected)
-The Worker is connected to this repo, so **every push auto-deploys**. `wrangler.jsonc` tells it to serve `./public` as static assets (this replaces the default "Hello world" worker). Clean URLs work automatically — `/imprint` resolves to `public/imprint.html`.
+The Worker is connected to this repo, so **every push auto-deploys**.
 
 - Custom domain `axisapp.live` is attached to this Worker in the Cloudflare dashboard (Worker → Settings → Domains & Routes).
 - Local preview: `npx wrangler dev`. Manual deploy: `npx wrangler deploy`.
-
-## Pages
-- `/` — landing (`index.html`)
-- `/privacy` — Privacy Policy (GDPR/DSGVO)
-- `/terms` — Terms of Service
-- `/imprint` — Imprint / Impressum
+- The SPA is normally updated by the Axis `deploy-remote` Action (which commits the fresh build here). A push then auto-deploys.
 
 ## ⚠ Before this is legally relied upon
 The legal pages contain **`[PLACEHOLDER]`** fields. Fill them before launch:

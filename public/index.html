@@ -1,37 +1,47 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Axis — editor for Fractal devices</title>
-<meta name="description" content="Axis — an independent editor for Fractal Audio devices (FM3, FM9, Axe-Fx III, AM4).">
-<link rel="stylesheet" href="/style.css">
-</head>
-<body>
-<div class="wrap">
-  <header class="site">
-    <span class="logo">A</span><span class="name">Axis</span>
-    <nav>
-      <a href="/privacy">Privacy</a>
-      <a href="/terms">Terms</a>
-      <a href="/imprint">Imprint</a>
-    </nav>
-  </header>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0c0c0e" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>Axis</title>
+    <link href="/_app/immutable/entry/start.B3RsAA_h.js" rel="modulepreload">
+		<link href="/_app/immutable/chunks/K2uj10bf.js" rel="modulepreload">
+		<link href="/_app/immutable/chunks/6Ngca8Hm.js" rel="modulepreload">
+		<link href="/_app/immutable/chunks/DlWS9gkQ.js" rel="modulepreload">
+		<link href="/_app/immutable/entry/app.DNcRIGR8.js" rel="modulepreload">
+		<link href="/_app/immutable/chunks/B5y3xtWr.js" rel="modulepreload">
+		<link href="/_app/immutable/chunks/DXieIt3W.js" rel="modulepreload">
+		<link href="/_app/immutable/chunks/BmRH1Xzw.js" rel="modulepreload">
+		<link href="/_app/immutable/chunks/DgWLr4sN.js" rel="modulepreload">
+		<link href="/_app/immutable/nodes/0.BduJZ46v.js" rel="modulepreload">
+		
+		<link href="/_app/immutable/assets/0.D1ebQTyy.css" rel="stylesheet">
+  </head>
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents">
+			<script>
+				{
+					__sveltekit_u8rty2 = {
+						base: ""
+					};
 
-  <section class="hero">
-    <h1>Axis</h1>
-    <p class="tag">An independent editor for Fractal Audio devices — FM3, FM9, Axe-Fx III &amp; AM4. Edit, back up, and organize your presets.</p>
-  </section>
+					const element = document.currentScript.parentElement;
 
-  <p class="disc" style="text-align:center">Independent, third-party software. Not affiliated with Fractal Audio Systems. Use at your own risk — always back up your presets.</p>
-
-  <footer class="site">
-    <a href="/privacy">Privacy Policy</a>
-    <a href="/terms">Terms of Service</a>
-    <a href="/imprint">Imprint</a>
-    <span style="margin-left:auto">© <span id="y"></span> Axis</span>
-  </footer>
-</div>
-<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
-</body>
+					Promise.all([
+						import("/_app/immutable/entry/start.B3RsAA_h.js"),
+						import("/_app/immutable/entry/app.DNcRIGR8.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element);
+					});
+				}
+			</script>
+		</div>
+  </body>
 </html>
