@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Axis</title>
+<meta name="description" content="Privacy Policy (GDPR / DSGVO) for Axis and Axis Cloud.">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="site">
+    <a href="/" style="display:flex;align-items:center;gap:12px;color:inherit"><span class="logo">A</span><span class="name">Axis</span></a>
+    <nav><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/imprint">Imprint</a></nav>
+  </header>
+
+  <h1>Privacy Policy</h1>
+  <p class="updated">Last updated: [DATE]</p>
+  <p class="lead">This policy explains what personal data Axis processes, why, and your rights under the EU General Data Protection Regulation (GDPR / DSGVO). Axis is independent, third-party software and is <strong>not affiliated with Fractal Audio Systems</strong>.</p>
+
+  <div class="note"><strong>Short version:</strong> The Axis app and its local engine run on <em>your</em> computer and talk to <em>your</em> device — that needs no account and sends us nothing. Personal data reaches us only if you (a) create an <strong>Axis Cloud</strong> account to back up/sync presets, or (b) opt in to <strong>anonymous diagnostics</strong> / send a debug report. Both are optional and off by default. We never sell your data, show ads, or send your presets or preset names to our diagnostics.</div>
+
+  <h2>1. Controller</h2>
+  <pre>[Your full legal name — or company name + legal form]
+[Street / c-o address]
+[Postal code, City, Country]
+Email: [contact email]</pre>
+  <p>See also the <a href="/imprint">Imprint</a>.</p>
+
+  <h2>2. When no data reaches us</h2>
+  <p>The Axis desktop app and its bundled engine (ForgeFX) run <strong>locally</strong>. Editing presets, reading your device, and local backups happen entirely on your machine and over your device's USB/MIDI connection. Using Axis this way requires <strong>no account</strong> and transmits <strong>no personal data to us</strong>.</p>
+
+  <h2>3. Axis Cloud (optional account &amp; sync)</h2>
+  <p>If you create an Axis Cloud account, we process:</p>
+  <table>
+    <tr><th>Data</th><th>Purpose</th><th>Legal basis</th></tr>
+    <tr><td>Email, password (stored only as a salted hash)</td><td>Create and authenticate your account</td><td>Art. 6(1)(b)</td></tr>
+    <tr><td>Account identifier</td><td>Link synced data to your account</td><td>Art. 6(1)(b)</td></tr>
+    <tr><td>Synced content: preset files, preset/scene names, block layouts, app config</td><td>Back up &amp; sync presets across your devices, at your request</td><td>Art. 6(1)(b)</td></tr>
+  </table>
+  <p><strong>Processor:</strong> account and storage are provided by <strong>Supabase</strong> (Supabase, Inc.), stored in the project's configured region <strong>[confirm: EU]</strong>. A Data Processing Agreement is in place; EU Standard Contractual Clauses cover any non-EU transfer. Your preset content is <strong>your data</strong>; we access it only to provide sync and never analyse or share it. <strong>Payments</strong> (for any future paid tier) are handled by the payment provider <strong>[Patreon / Stripe]</strong>; we do not receive or store card details. This section is updated before any paid tier launches.</p>
+
+  <h2>4. Anonymous diagnostics (opt-in telemetry)</h2>
+  <p>Diagnostics are <strong>off by default</strong> and only run if you explicitly enable them in <em>Privacy &amp; Diagnostics</em>. When enabled, we collect, to find and fix bugs:</p>
+  <ul>
+    <li>a <strong>random, anonymous instance ID</strong> (a UUID on your device — not linked to your account, email, or name);</li>
+    <li>app version, and your OS, browser engine, and hardware/runtime versions;</li>
+    <li>your <strong>Fractal device model and firmware</strong> (when known);</li>
+    <li><strong>error reports</strong> (type, message, stack trace — automatically scrubbed of emails and file-system user names before sending);</li>
+    <li>basic <strong>performance/usage events</strong> (which screen or request failed, timing, session identifier).</li>
+  </ul>
+  <p><strong>We never collect</strong> via diagnostics: your name, email, account ID, passwords/tokens, <strong>preset names or preset content</strong>, scene/setlist names, file contents, or full file-system paths.</p>
+  <p><strong>Legal basis:</strong> Art. 6(1)(a) — your consent, withdrawable any time in Privacy &amp; Diagnostics. <strong>Processor:</strong> <strong>Grafana Cloud</strong> (Grafana Labs) via Grafana Faro, in the <strong>EU region</strong>; your IP is processed transiently at ingestion and not used to build a profile. DPA in place; SCCs apply to any non-EU transfer.</p>
+
+  <h2>5. Debug reports (on-demand)</h2>
+  <p>If you choose to <em>"Send debug report"</em>, we upload a one-time bundle: your session's local debug log, recent app events, device/OS/app versions, and the triggering error. It is <strong>scrubbed of personal data</strong>, compressed, and stored keyed to your anonymous instance ID. <strong>Legal basis:</strong> Art. 6(1)(a) — explicit, per-incident consent (it only uploads when you press the button, even if live diagnostics are off). <strong>Storage:</strong> Supabase Storage, access-restricted bucket.</p>
+
+  <h2>6. Local storage on your device</h2>
+  <p>Axis stores small technical values in your browser's local storage (diagnostics consent choice, anonymous instance ID, UI preferences). These are <strong>functional</strong> and stay on your device — not tracking or advertising cookies, so no cookie banner is required. Clearing them resets your choices.</p>
+
+  <h2>7. Retention</h2>
+  <ul>
+    <li><strong>Account &amp; synced content:</strong> until you delete the item or your account.</li>
+    <li><strong>Diagnostics telemetry:</strong> ~<strong>14 days</strong>, then deleted automatically.</li>
+    <li><strong>Debug reports:</strong> up to <strong>[e.g. 90 days]</strong>, then deleted.</li>
+    <li><strong>Backups:</strong> per the provider's standard schedule.</li>
+  </ul>
+
+  <h2>8. Your rights</h2>
+  <p>You have the right to <strong>access</strong> (Art. 15), <strong>rectification</strong> (16), <strong>erasure</strong> (17), <strong>restriction</strong> (18), <strong>portability</strong> (20), and to <strong>object</strong> (21); and to <strong>withdraw consent</strong> at any time (7(3)). To delete your account and synced data: [in-app path or email <strong>[contact email]</strong>]. Exercise any right via <strong>[contact email]</strong>. You may also complain to a supervisory authority — for Germany, your competent <strong>Landesdatenschutzbehörde</strong> [your federal state's authority].</p>
+
+  <h2>9. Recipients &amp; sharing</h2>
+  <p>We do <strong>not</strong> sell or rent personal data, and do not use it for advertising or profiling. Data is shared only with the processors above (Supabase, Grafana Labs, and — for a future paid tier — the payment provider), strictly to operate the service, under Data Processing Agreements.</p>
+
+  <h2>10. Children</h2>
+  <p>Axis is not directed at children under 16. If you are under 16, please do not create an account without a parent/guardian's consent.</p>
+
+  <h2>11. Changes</h2>
+  <p>We may update this policy (e.g. when we add a processor or paid tier). The current version is always at <strong>https://axisapp.live/privacy</strong> with the date above; material changes affecting consent are surfaced in the app.</p>
+
+  <hr>
+  <p class="disc">Draft — not legal advice. Confirm each processor's region and DPA, and have this reviewed by a qualified data-protection lawyer before public launch.</p>
+
+  <footer class="site"><a href="/terms">Terms</a><a href="/imprint">Imprint</a><a href="/">Home</a></footer>
+</div>
+</body>
+</html>
