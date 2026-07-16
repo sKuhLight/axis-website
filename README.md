@@ -14,7 +14,7 @@ The Worker is connected to this repo, so **every push auto-deploys**.
 
 - Custom domain `axisapp.live` is attached to this Worker in the Cloudflare dashboard (Worker → Settings → Domains & Routes).
 - Local preview: `npx wrangler dev`. Manual deploy: `npx wrangler deploy`.
-- The SPA is normally updated by the Axis `deploy-remote` Action (which commits the fresh build here). A push then auto-deploys.
+- The SPA is updated by the Axis `deploy-remote` Action, which since 2026-07-16 runs when an **Axis release is published**: it builds the app **at that release's tag** with the pinned sibling stack and commits the result here. A push then auto-deploys — so axisapp.live serves the last *published* Axis release, not Axis main HEAD. (Rollback: re-run deploy-remote with an earlier release tag; see `Axis/docs/RELEASING.md`.)
 
 ## ⚠ Before this is legally relied upon
 The legal pages contain **`[PLACEHOLDER]`** fields. Fill them before launch:
